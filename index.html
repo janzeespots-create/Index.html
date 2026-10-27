@@ -1,0 +1,245 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#080811">
+<meta name="description" content="JANZE ESPORTS - Gaming tournaments, competitions and Android app downloads.">
+<title>JANZE ESPORTS | Official Gaming Arena</title>
+
+<style>
+:root {
+  --bg:#080811;
+  --card:#141425;
+  --purple:#a45cff;
+  --green:#b5ff45;
+  --text:#fff;
+  --muted:#aaa9bd;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);color:var(--text);
+  font-family:Arial,Helvetica,sans-serif;line-height:1.6
+}
+a{text-decoration:none;color:inherit}
+button{font:inherit;cursor:pointer}
+header{
+  padding:17px 7%;display:flex;align-items:center;
+  justify-content:space-between;border-bottom:1px solid #28243b;
+  background:#080811f5;position:sticky;top:0;z-index:10
+}
+.logo{font-size:22px;font-weight:900;letter-spacing:1px}
+.logo span{color:var(--green)}
+nav{display:flex;align-items:center;gap:22px}
+nav a:hover{color:var(--green)}
+.menu{display:none;background:none;color:white;border:0;font-size:25px}
+.btn{
+  display:inline-block;padding:12px 20px;border:0;
+  border-radius:7px;background:var(--green);color:#101010;
+  font-weight:bold;transition:.2s;text-align:center
+}
+.btn:hover{transform:translateY(-2px);filter:brightness(1.1)}
+.purple{background:var(--purple);color:white}
+.hero{
+  min-height:510px;padding:90px 7%;display:flex;align-items:center;
+  position:relative;overflow:hidden;
+  background:radial-gradient(ellipse at 80% 40%,#622a9866,transparent 50%),
+  linear-gradient(120deg,#080811,#151329)
+}
+.hero-content{max-width:680px;position:relative;z-index:1}
+.tag{color:var(--green);font-size:12px;font-weight:bold;letter-spacing:3px}
+h1{font-size:clamp(42px,7vw,76px);line-height:1.06;margin:20px 0}
+h1 span{color:var(--purple)}
+.hero p,.muted{color:var(--muted)}
+.hero p{max-width:530px;margin-bottom:27px}
+.actions{display:flex;gap:12px;flex-wrap:wrap}
+.hero-art{
+  position:absolute;right:7%;font-size:clamp(120px,22vw,245px);
+  font-weight:900;color:#a45cff19;transform:rotate(-12deg)
+}
+section{padding:65px 7%}
+.section-head{margin-bottom:26px}
+h2{font-size:clamp(26px,4vw,36px);margin:6px 0}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.card{background:var(--card);border:1px solid #2b2840;border-radius:13px;padding:22px}
+.card h3{margin:13px 0 8px}
+.card p{font-size:14px;color:var(--muted)}
+.art{
+  height:125px;border-radius:9px;display:grid;place-items:center;
+  font-size:50px;background:linear-gradient(135deg,#45236a,#18182b);
+  margin-bottom:17px
+}
+.pill{
+  display:inline-block;padding:4px 10px;border-radius:20px;
+  font-size:12px;background:#b5ff4519;color:var(--green)
+}
+.card .btn{margin-top:17px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;text-align:center;background:#10101c}
+.stats strong{display:block;color:var(--green);font-size:24px}
+.stats span{font-size:13px;color:var(--muted)}
+.download-box{
+  padding:35px;background:linear-gradient(120deg,#281541,#131326);
+  border:1px solid #583a80;border-radius:16px;
+  display:flex;justify-content:space-between;align-items:center;gap:25px;flex-wrap:wrap
+}
+.download-box p{color:var(--muted);margin:10px 0 18px}
+.download-icon{font-size:85px}
+.file-name{font-size:12px;overflow-wrap:anywhere;color:var(--muted);margin:12px 0}
+.notice{font-size:12px;color:var(--muted);margin-top:12px}
+footer{padding:28px 7%;border-top:1px solid #29263e;color:var(--muted)}
+.footer-row{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+@media(max-width:800px){
+  header{padding:15px 5%}
+  .menu{display:block}
+  nav{
+    display:none;position:absolute;top:63px;left:0;right:0;
+    background:#11101e;padding:20px;flex-direction:column
+  }
+  nav.open{display:flex}
+  .hero{padding:80px 5%}
+  .hero-art{right:-5%;font-size:130px}
+  section{padding:52px 5%}
+  .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:520px){
+  .grid{grid-template-columns:1fr}
+  .hero{min-height:460px}
+  .stats{grid-template-columns:1fr}
+  .download-box{padding:23px}
+}
+</style>
+</head>
+
+<body>
+<header>
+  <a class="logo" href="#home">JANZE <span>ESPORTS</span></a>
+  <button class="menu" id="menuBtn" aria-label="Open navigation">☰</button>
+  <nav id="navigation">
+    <a href="#home">Home</a>
+    <a href="#tournaments">Tournaments</a>
+    <a href="#leaderboard">Leaderboard</a>
+    <a href="#download">Download App</a>
+  </nav>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <div class="hero-content">
+    <div class="tag">WELCOME TO YOUR GAMING ARENA</div>
+    <h1>COMPETE.<br>CONQUER.<br><span>DOMINATE.</span></h1>
+    <p>Your arena. Your team. Your victory. Explore esports tournaments, discover upcoming competitions and join the JANZE ESPORTS community.</p>
+    <div class="actions">
+      <a href="#download" class="btn">↓ DOWNLOAD APP</a>
+      <a href="#tournaments" class="btn purple">EXPLORE TOURNAMENTS</a>
+    </div>
+  </div>
+  <div class="hero-art" aria-hidden="true">JZ</div>
+</section>
+
+<section class="stats">
+  <div><strong>JANZE</strong><span>Esports Community</span></div>
+  <div><strong>COMPETE</strong><span>Challenge Yourself</span></div>
+  <div><strong>LEVEL UP</strong><span>Play To Improve</span></div>
+</section>
+
+<section id="tournaments">
+  <div class="section-head">
+    <div class="tag">FIND YOUR NEXT CHALLENGE</div>
+    <h2>Featured Tournaments</h2>
+    <p class="muted">Tournament announcements and upcoming competitions.</p>
+  </div>
+  <div class="grid">
+    <article class="card">
+      <div class="art">🎯</div>
+      <span class="pill">ANNOUNCEMENTS SOON</span>
+      <h3>Battle Royale Challenge</h3>
+      <p>Check back for confirmed dates, registration and competition rules.</p>
+    </article>
+    <article class="card">
+      <div class="art">⚔️</div>
+      <span class="pill">ANNOUNCEMENTS SOON</span>
+      <h3>Squad Showdown</h3>
+      <p>Team up with your squad. Official event details will appear here.</p>
+    </article>
+    <article class="card">
+      <div class="art">🏆</div>
+      <span class="pill">ANNOUNCEMENTS SOON</span>
+      <h3>Champions Arena</h3>
+      <p>Watch for confirmed match schedules and championship updates.</p>
+    </article>
+  </div>
+</section>
+
+<section id="leaderboard">
+  <div class="section-head">
+    <div class="tag">PLAYER RANKINGS</div>
+    <h2>Leaderboard</h2>
+    <p class="muted">Official player rankings will be displayed when results are available.</p>
+  </div>
+  <div class="card">
+    <p>No official player results have been published yet.</p>
+  </div>
+</section>
+
+<section id="download">
+  <div class="download-box">
+    <div style="flex:1;min-width:230px">
+      <div class="tag">YOUR ARENA IN YOUR POCKET</div>
+      <h2>Download JANZE ESPORTS</h2>
+      <p>Get the Android app and stay connected with your gaming community.</p>
+      <span class="pill" id="appStatus">ANDROID APK</span>
+      <div class="file-name">Janze-Esports-v1.0-debug-build-48.apk</div>
+
+      <a
+        class="btn"
+        id="downloadBtn"
+        href="./Janze-Esports-v1.0-debug-build-48.apk"
+        download="Janze-Esports-v1.0-debug-build-48.apk">
+        ↓ DOWNLOAD APK
+      </a>
+
+      <p class="notice" id="downloadNotice">
+        APK must be uploaded to the same folder as this HTML file.
+      </p>
+    </div>
+    <div class="download-icon" aria-hidden="true">🎮</div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="tag">ABOUT US</div>
+  <h2>Welcome to JANZE ESPORTS</h2>
+  <p class="muted">A gaming community for esports fans. Check this website for app releases, official tournament announcements and match updates.</p>
+</section>
+</main>
+
+<footer>
+  <div class="footer-row">
+    <a class="logo" href="#home">JANZE <span>ESPORTS</span></a>
+    <span>Gaming • Tournaments • Community</span>
+  </div>
+  <p class="notice">© <span id="year"></span> JANZE ESPORTS. All rights reserved.</p>
+</footer>
+
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+
+document.getElementById("menuBtn").addEventListener("click", () => {
+  document.getElementById("navigation").classList.toggle("open");
+});
+
+document.querySelectorAll("#navigation a").forEach(link => {
+  link.addEventListener("click", () => {
+    document.getElementById("navigation").classList.remove("open");
+  });
+});
+
+// APK file URL: keep the APK beside index.html.
+// The file must actually be uploaded to your hosting server.
+const APK_URL = "./Janze-Esports-v1.0-debug-build-48.apk";
+document.getElementById("downloadBtn").href = APK_URL;
+</script>
+</body>
+</html>
